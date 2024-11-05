@@ -1,0 +1,51 @@
+Start
+
+Import the 'os' module for file existence checking.
+
+Function file_exists(filename):
+    Return True if the file with the given filename exists, otherwise, return False.
+
+Function read_file(filename):
+    Create an empty list called 'numbers'.
+    If file_exists(filename):
+        Open the file with the given filename for reading.
+        For each line in the file:
+            Split the line into individual numbers.
+            Convert each number to an integer and add it to the 'numbers' list.
+        Close the file.
+    Else:
+        Print an error message indicating that the file was not found.
+    Return the 'numbers' list.
+
+Function filter_odd_or_even(numbers, keep_odd):
+    Create an empty list called 'filtered_numbers'.
+    For each number in 'numbers':
+        If 'keep_odd' is True and the number is odd (num % 2 == 1):
+            Add the number to 'filtered_numbers'.
+        If 'keep_odd' is False and the number is even (num % 2 == 0):
+            Add the number to 'filtered_numbers'.
+    Return the 'filtered_numbers' list.
+
+Function reversed_bubble_sort(numbers):
+    Get the length 'n' of the 'numbers' list.
+    For 'i' in the range from 0 to 'n':
+        For 'j' in the range from 0 to 'n - i - 1':
+            If 'numbers[j]' is less than 'numbers[j + 1]':
+                Swap 'numbers[j]' and 'numbers[j + 1]'.
+
+Function main():
+    Import the 'sys' module.
+    Check the number of command-line arguments:
+        If there are not exactly 3 arguments:
+            Print a usage message and exit.
+    Get the first command-line argument as 'Lab2_5_1'.
+    Get the second command-line argument as 'Lab2_5_2'.
+    Filter odd numbers from the result of read_file(Lab2_5_1) and store them in 'odd_numbers'.
+    Filter even numbers from the result of read_file(Lab2_5_2) and store them in 'even_numbers'.
+    Combine 'odd_numbers' and 'even_numbers' into 'combined_numbers'.
+    Sort 'combined_numbers' in reverse order using reversed_bubble_sort.
+    Print 'combined_numbers'.
+
+Call the main() function to start the program.
+
+End
